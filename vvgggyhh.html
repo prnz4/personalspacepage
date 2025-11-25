@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prinz Al - Panpacific University Student Personal Page</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(-45deg, #000000, #0a0f1f, #06192b, #74c9ff);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  color: white;
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background: rgba(10, 15, 30, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex; justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(180, 240, 255, 0.3);
+}
+nav .logo {
+  font-weight: 600;
+  color: #74c9ff;
+  font-size: 1em;
+}
+nav a {
+  color: #c7e7ff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #74c9ff;
+  text-shadow: 0 0 10px #74c9ff;
+}
+
+section {
+  padding: 100px 20px 60px;
+  text-align: center;
+}
+
+#home {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+}
+#home h1 {
+  font-size: 3em;
+  color: #74c9ff;
+  text-shadow: 0 0 20px #b9dcff;
+}
+#home p {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #c7e7ff;
+  line-height: 1.4;
+}
+#home button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #06192b, #74c9ff);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(180, 240, 255, 0.4);
+}
+#home button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(180, 240, 255, 0.7);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card {
+  background: rgba(10, 15, 30, 0.7);
+  border: 1px solid rgba(116, 201, 255, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(116, 201, 255, 0.3);
+  padding: 25px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(116, 201, 255, 0.6);
+}
+
+.card h2 {
+  color: #74c9ff;
+  margin-bottom: 15px;
+}
+.card p {
+  color: #e6f3ff;
+  line-height: 1.6;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+.about-image {
+  flex: 1;
+  min-width: 250px;
+  height: 300px;
+  background: linear-gradient(135deg, #06192b, #74c9ff);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(116, 201, 255, 0.5);
+}
+.about-text {
+  flex: 2;
+  min-width: 250px;
+}
+.skills span {
+  display: inline-block;
+  background: rgba(116,201,255,0.2);
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 8px;
+  color: #74c9ff;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-card {
+  background: rgba(15, 25, 45, 0.8);
+  border: 1px solid rgba(116, 201, 255, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(116, 201, 255, 0.2);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(116, 201, 255, 0.7);
+}
+.project-card h3 {
+  color: #74c9ff;
+  margin-bottom: 10px;
+}
+.project-card p {
+  font-size: 0.95em;
+  color: #d8eaff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+input, textarea {
+  padding: 10px;
+  border: 1px solid rgba(180, 240, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(20, 30, 50, 0.7);
+  color: #e6f3ff;
+  outline: none;
+  transition: 0.3s;
+}
+input:focus, textarea:focus {
+  background: rgba(30, 50, 70, 0.8);
+  box-shadow: 0 0 10px rgba(116, 201, 255, 0.6);
+}
+button.submit {
+  align-self: center;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #06192b, #74c9ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(116, 201, 255, 0.4);
+}
+button.submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(116, 201, 255, 0.8);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.85em;
+  color: #a5cfff;
+  background: rgba(10, 15, 30, 0.7);
+  border-top: 1px solid rgba(116, 201, 255, 0.3);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Panpacific University Student Personal Page</div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="home">
+  <h1>Web Systems & Digital Quests</h1>
+  <p>Leveling up my IT knowledge, one challenge at a time.<br>
+     Every academic task is a raid boss, every project a world-first clear.<br>
+     The grind is real, but the victories—in class and personal projects—are always worth it.</p>
+  <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Explore My Work</button>
+</section>
+
+<div class="container">
+
+  <section id="about" class="card about-section">
+    <div class="about-image"></div>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>Hello! I'm Prinz Al, a BSIT student at Panpacific University with a passion for technology, web systems, and creative problem-solving. I explore digital tools, IT concepts, and academic projects that challenge my logic and skills.</p>
+      <p>When I’m not studying, I enjoy experimenting with personal digital projects, learning new tech tricks, and continuously improving my workflow.</p>
+      <div class="skills">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript (basic)</span>
+        <span>Java</span>
+        <span>Python</span>
+        <span>SQL</span>
+        <span>Web Design</span>
+        <span>Problem-Solving</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="hobbies" class="card">
+    <h2>Hobbies</h2>
+    <p>I enjoy playing video games, watching anime, shooting hoops on the basketball court, and going on bicycle rides. These hobbies keep me active, entertained, and creative in my free time.</p>
+  </section>
+
+  <section id="projects" class="card">
+    <h2>Projects & Coursework</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Hotel Management System</h3>
+        <p>A Java console application that manages hotel reservations, guest records, room availability, and billing. It strengthened my logic, OOP knowledge, and real-world problem-solving skills.</p>
+      </div>
+      <div class="project-card">
+        <h3>Library Management System</h3>
+        <p>An HTML, CSS, and SQL web project that tracks books, borrowers, and student data. I learned database interactions, front-end validation, and dynamic data handling.</p>
+      </div>
+      <div class="project-card">
+        <h3>Calendar App</h3>
+        <p>A responsive web calendar using HTML, CSS, and JavaScript. Users can add, edit, and remove events. Focused on usability, interactive design, and proper date handling.</p>
+      </div>
+      <div class="project-card">
+        <h3>Online Calculator</h3>
+        <p>A simple, clean online calculator with responsive buttons. Improved my understanding of DOM manipulation, logic operations, and UI design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>Let's Work Together</h2>
+    <p>Ready to bring your vision to life? Let's discuss how we can create something amazing together.</p>
+    <form>
+      <input type="text" placeholder="Your full name" required>
+      <input type="email" placeholder="your.email@example.com" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea rows="4" placeholder="Tell me about your project..." required></textarea>
+      <button class="submit">Send Message</button>
+    </form>
+  </section>
+
+</div>
+
+<footer>© 2025 Prinz Al | Panpacific University Student Personal Page</footer>
+
+</body>
+</html>
